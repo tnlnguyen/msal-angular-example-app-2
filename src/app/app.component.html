@@ -1,0 +1,47 @@
+<table>
+  <tr>
+    <td>
+      <a routerLink='public-page'>[PUBLIC-PAGE]</a>
+    </td>
+    <td>
+      <a routerLink='restrict-page'>[RESTRICT-PAGE]</a>
+    </td>
+    <td><button (click)="login()" *ngIf="!isLoggedIn()">Sign In</button></td>
+    <td><button (click)="logout()" *ngIf="isLoggedIn()">Sign Out</button></td>
+  </tr>
+</table>
+
+<div *ngIf="isLoggedIn()">
+  <h3>Welcome back, {{getName()}} !</h3>
+</div>
+
+<div *ngIf="isLoggedIn()">
+  <h3>You are logged in</h3>
+</div>
+
+<div *ngIf="!isLoggedIn()">
+  <h3>You are not logged in</h3>
+</div>
+
+<table>
+  <tr>
+    <td><button (click)="getProfile()" *ngIf="isLoggedIn()">Get Profile</button></td>
+  </tr>
+
+  <tr>
+    <td><button (click)="getMail()" *ngIf="isLoggedIn()">Get Mail</button></td>
+  </tr>
+
+  <tr>
+    <td><button (click)="getActiveAccount()" *ngIf="isLoggedIn()">Get Current Account</button></td>
+  </tr>
+
+  <tr>
+    <td><button (click)="getWeather()" *ngIf="isLoggedIn()">Get Weather</button></td>
+  </tr>
+
+  <tr>
+    <h3 *ngIf="isLoggedIn()">Response: {{apiResponse}}</h3>
+  </tr>
+</table>
+<router-outlet></router-outlet>
