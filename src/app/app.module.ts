@@ -14,7 +14,7 @@ export function MSALInstanceFactory(): IPublicClientApplication {
   return new PublicClientApplication({
     auth: {
       clientId: '1e0c0be0-488b-4eae-855f-d38247f5b85f',
-      redirectUri: 'http://localhost:4200',
+      redirectUri: 'https://pet-app2.azurewebsites.net/',
       authority: 'https://login.microsoftonline.com/2988af91-a14f-4260-8bb9-7f1e092df981'
     },
     cache: {
