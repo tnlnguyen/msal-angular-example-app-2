@@ -42,14 +42,20 @@ export class AppComponent implements OnInit {
     } else return 'Unknown';
   }
 
-  getProfile() {
-    this.httpClient.get('https://graph.microsoft.com/v1.0/me').subscribe((res) => {
-      this.apiResponse = JSON.stringify(res);
-    });
+  getMail() {
+    if (this.msalService.instance.getActiveAccount()) {
+      return this.msalService.instance.getActiveAccount()?.username;
+    } else return 'Unknown';
   }
 
-  getMail() {
-    this.httpClient.get('https://graph.microsoft.com/v1.0/me/messages').subscribe((res) => {
+  getTenantId() {
+    if (this.msalService.instance.getActiveAccount()) {
+      return this.msalService.instance.getActiveAccount()?.tenantId;
+    } else return 'Unknown';
+  }
+
+  getProfile() {
+    this.httpClient.get('https://graph.microsoft.com/v1.0/me').subscribe((res) => {
       this.apiResponse = JSON.stringify(res);
     });
   }

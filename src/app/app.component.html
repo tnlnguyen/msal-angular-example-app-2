@@ -1,13 +1,20 @@
+<h1>Alpha PAC UE</h1>
+
+<table>
+  <td><button (click)="login()" *ngIf="!isLoggedIn()">Sign In</button></td>
+  <td><button (click)="logout()" *ngIf="isLoggedIn()">Sign Out</button></td>
+</table>
 <table>
   <tr>
     <td>
-      <a routerLink='public-page'>[PUBLIC-PAGE]</a>
+      <a href="https://pet-app2.azurewebsites.net/" target="_blank">[DataGrab]</a>
     </td>
     <td>
-      <a routerLink='restrict-page'>[RESTRICT-PAGE]</a>
+      <a href="#">[App 2]</a>
     </td>
-    <td><button (click)="login()" *ngIf="!isLoggedIn()">Sign In</button></td>
-    <td><button (click)="logout()" *ngIf="isLoggedIn()">Sign Out</button></td>
+    <td>
+      <a href="#">[App 3]</a>
+    </td>
   </tr>
 </table>
 
@@ -24,11 +31,11 @@
 </div>
 
 <table>
-  <tr>
+  <!-- <tr>
     <td><button (click)="getProfile()" *ngIf="isLoggedIn()">Get Profile</button></td>
-  </tr>
+  </tr> -->
 
-  <tr>
+  <!-- <tr>
     <td><button (click)="getMail()" *ngIf="isLoggedIn()">Get Mail</button></td>
   </tr>
 
@@ -38,10 +45,16 @@
 
   <tr>
     <td><button (click)="getWeather()" *ngIf="isLoggedIn()">Get Weather</button></td>
-  </tr>
+  </tr> -->
 
   <tr>
-    <h3 *ngIf="isLoggedIn()">Response: {{apiResponse}}</h3>
+    <h3 *ngIf="isLoggedIn()">Full Name: {{getName()}}</h3>
+  </tr>
+  <tr>
+    <h3 *ngIf="isLoggedIn()">Email: {{getMail()}}</h3>
+  </tr>
+  <tr>
+    <h3 *ngIf="isLoggedIn()">Tenant: {{getTenantId()}}</h3>
   </tr>
 </table>
 <router-outlet></router-outlet>
