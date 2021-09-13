@@ -22,6 +22,8 @@ export class AppComponent implements OnInit {
         this.msalService.instance.setActiveAccount(res.account)
       }
     })
+    
+    login()
   }
 
   isLoggedIn() : boolean {
